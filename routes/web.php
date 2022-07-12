@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+// Controllers
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,11 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-});
+Route::get('/', function() {
+  return redirect()->route('post.index');
+})->name('home');
+
+Route::resource('/post', PostController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
