@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Media extends Model
 {
   use HasFactory;
   /**
@@ -14,12 +14,12 @@ class Post extends Model
    * @var array<int, string>
    */
   protected $fillable = [
-    'title',
-    'user_id',
-    'ip_address'
+    'post_id',
+    'path',
   ];
 
-  public function media() {
-    return $this->hasMany('App\Models\Media');
+  public function post()
+  {
+    return $this->belongsTo('App\Models\Post');
   }
 }

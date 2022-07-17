@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost normal-case text-xl">interior_app</a>
       </div>
       <div className="navbar-center">
         <div className="form-control">

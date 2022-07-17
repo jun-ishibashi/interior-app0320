@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            // users.idの外部キーにする
-            $table->unsignedBigInteger('user_id');
-            $table->string('ip_address');
+            $table->foreignId('post_id')->constrained('posts');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('media');
     }
 };
